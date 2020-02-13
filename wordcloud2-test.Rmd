@@ -1,0 +1,48 @@
+---
+title: "Wordcloud2 Test"
+date: "13/02/2020"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r test}
+library(wordcloud2)
+```
+
+TEST WORDCLOUD {data-navmenu="TEST1"}
+=====================================
+
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+```{r pressure, echo=FALSE}
+wordcloud2(data = head(demoFreq,3))
+```
+
+Column {data-width=700}{.tabset}
+-----------------------------------------------------------------------
+
+### Tab 1
+  
+```{r}
+wordcloud2(head(demoFreq,3), color = "random-light", backgroundColor = "grey")
+```
+
+### Tab 2
+
+```{r}
+wordcloud2(head(demoFreq,6), color = "random-light", backgroundColor = "white")
+```
+
+### Tab 3
+
+```{r}
+wordcloud2(head(demoFreq,8), color = "random-light", backgroundColor = "white")
+```
+
